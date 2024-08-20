@@ -107,11 +107,11 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
   - [Contribuindo](#contribuindo)
   - [Índice de tópicos de design de sistemas](#índice-de-tópicos-de-design-de-sistemas)
   - [Guia de estudos](#guia-de-estudos)
-  - [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-    - [Step 1: Outline use cases, constraints, and assumptions](#step-1-outline-use-cases-constraints-and-assumptions)
-    - [Step 2: Create a high level design](#step-2-create-a-high-level-design)
-    - [Step 3: Design core components](#step-3-design-core-components)
-    - [Step 4: Scale the design](#step-4-scale-the-design)
+  - [Como responder a uma pergunta de entrevista sobre design de sistema](#como-responder-a-uma-pergunta-de-entrevista-sobre-design-de-sistema)
+    - [Passo 1: Descreva casos de uso, restrições e suposições](#passo-1-descreva-casos-de-uso-restrições-e-suposições)
+    - [Passo 2: Faça um design de alto nível](#passo-2-faça-um-design-de-alto-nível)
+    - [Passo 3: Projete os componentes principais](#passo-3-projete-os-componentes-principais)
+    - [Passo 4: Escale o design](#passo-4-escale-o-design)
     - [Back-of-the-envelope calculations](#back-of-the-envelope-calculations)
     - [Source(s) and further reading](#sources-and-further-reading)
   - [System design interview questions with solutions](#system-design-interview-questions-with-solutions)
@@ -272,91 +272,91 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
 
 ## Guia de estudos
 
-> Suggested topics to review based on your interview timeline (short, medium, long).
+> Tópicos sugeridos para revisão com base no cronograma da sua entrevista (curta, média, longa).
 
 ![Imgur](images/OfVllex.png)
 
-**Q: For interviews, do I need to know everything here?**
+**P: Para entrevistar, eu preciso saber tudo aqui?**
 
-**A: No, you don't need to know everything here to prepare for the interview**.
+**R: Não, você não precisa saber tudo aqui para se preparar para a entrevista**.
 
-What you are asked in an interview depends on variables such as:
+O que é perguntado a você em uma entrevista depende de variaveis como:
 
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
+* Quanta experiencia você tem
+* Qual é sua formação técnica
+* Para quais cargos você está sendo entrevistado
+* Com quais empresas você está fazendo a entrevista
+* Sorte
 
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
+Em geral, espera-se que candidatos mais experientes saibam mais sobre design de sistemas. Pode-se esperar que arquitetos ou líderes de equipe saibam mais do que contribuidores individuais. As principais empresas de tecnologia provavelmente terão uma ou mais rodadas de entrevistas de design.
 
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
+Comece de forma ampla e aprofunde-se em algumas áreas. Ajuda saber um pouco sobre vários tópicos-chave de design de sistemas. Ajuste o guia a seguir com base em seu cronograma, experiência, para quais posições você está sendo entrevistado e com quais empresas você está sendo entrevistado.
 
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
+* **Cronograma curto** - Busque **amplitude** com tópicos de design de sistema. Pratique resolvendo **algumas** perguntas de entrevista.
+* **Cronograma médio** - Busque **amplitude** e **alguma profundidade** com tópicos de design de sistema. Pratique resolvendo **muitas** perguntas de entrevista.
+* **Cronograma longo** - Busque **amplitude** e **mais profundidade** com tópicos de design de sistema. Pratique resolvendo **a maioria** das perguntas da entrevista..
 
-| | Short | Medium | Long |
+| | Curto | Médio | longo |
 |---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
+| Leia os [tópicos de design de sistemas](#índice-de-tópicos-de-design-de-sistemas) para obter uma ampla compreensão de como os sistemas funcionam | :+1: | :+1: | :+1: |
+| Leia alguns artigos nos [blogs de engenharia da empresa](#company-engineering-blogs) das empresas com as quais você está entrevistando | :+1: | :+1: | :+1: |
+| Leia algumas [arquiteturas do mundo real](#real-world-architectures) | :+1: | :+1: | :+1: |
+| Revise [como responder a uma questão de entrevista de design do sistema](#como-responder-a-uma-pergunta-de-entrevista-sobre-design-de-sistema) | :+1: | :+1: | :+1: |
+| Trabalhar com [perguntas da entrevista de design de sistemas com soluções](#system-design-interview-questions-with-solutions) | Algumas | Muitas | A maioria |
+| Trabalhar com [Perguntas de entrevista sobre design orientado a objetos com soluções](#object-oriented-design-interview-questions-with-solutions) | Algumas | Muitas | A maioria |
+| Revise [Perguntas adicionais da entrevista sobre design de sistema](#additional-system-design-interview-questions) | Algumas | Muitas | A maioria |
 
-## How to approach a system design interview question
+## Como responder a uma pergunta de entrevista sobre design de sistema
 
-> How to tackle a system design interview question.
+> Como responder uma pergunta de entrevista sobre design de sistemas. 
 
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
+A entrevista de design de sistema é uma **conversa aberta**. Espera-se que você a lidere.
 
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
+Você pode usar os seguintes passos para orientar a discussão. Para ajudar a solidificar esse processo, trabalhe na seção [Perguntas da entrevista de design de sistema com soluções](#system-design-interview-questions-with-solutions) usando os seguintes passos.
 
-### Step 1: Outline use cases, constraints, and assumptions
+### Passo 1: Descreva casos de uso, restrições e suposições
 
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
+Reúna requisitos e defina o escopo do problema. Faça perguntas para esclarecer casos de uso e restrições. Discuta suposições.
 
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
+* Quem vai usar?
+* Como eles vão usar?
+* Quantos usuários existem?
+* O que o sistema faz?
+* Quais são as entradas e saídas do sistema?
+* Quantos dados esperamos manipular?
+* Quantas solicitações por segundo esperamos?
+* Qual é a taxa esperada de leitura para gravação?
 
-### Step 2: Create a high level design
+### Passo 2: Faça um design de alto nível
 
-Outline a high level design with all important components.
+Esboce um design de alto nível com todos os componentes importantes.
 
-* Sketch the main components and connections
-* Justify your ideas
+* Esboce os principais componentes e conexões
+* Justifique suas ideias
 
-### Step 3: Design core components
+### Passo 3: Projete os componentes principais
 
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
+Mergulhe nos detalhes de cada componente principal. Por exemplo, se lhe pedissem para [projetar um serviço de encurtamento de URL](solutions/system_design/pastebin/README.md), discuta:
 
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
+* Gerar e armazenar um hash da URL completa
+    * [MD5](solutions/system_design/pastebin/README.md) e [Base62](solutions/system_design/pastebin/README.md)
+    * Colisões de hash
+    * SQL ou NoSQL
+    * Esquemas de banco de dados
+* Traduzir uma URL com hash para a URL completa
+    * Pesquisa de banco de dados
+* API e design orientado a objetos
 
-### Step 4: Scale the design
+### Passo 4: Escale o design
 
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
+Identifique e resolva gargalos, dadas as restrições. Por exemplo, você precisa do seguinte para resolver problemas de escalabilidade?
 
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
+* Balanceador de carga
+* Escala horizontal
+* Cache
+* Fragmentação de banco de dados
 
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+Discuta soluções potenciais e compensações. Tudo é uma compensação. Resolva gargalos usando [princípios de design de sistema escalável](#índice-de-tópicos-de-design-de-sistemas).
 
 ### Back-of-the-envelope calculations
 
