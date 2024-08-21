@@ -123,7 +123,7 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     - [Projete um armazenamento de chave-valor para um mecanismo de busca](#projete-um-armazenamento-de-chave-valor-para-um-mecanismo-de-busca)
     - [Projete o recurso de classificação de vendas da Amazon por categoria](#projete-o-recurso-de-classificação-de-vendas-da-amazon-por-categoria)
     - [Projete um sistema que seja escalável para milhões de usuários na AWS](#projete-um-sistema-que-seja-escalável-para-milhões-de-usuários-na-aws)
-  - [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions)
+  - [Perguntas de entrevista sobre design orientado a objetos com soluções](#perguntas-de-entrevista-sobre-design-orientado-a-objetos-com-soluções)
   - [System design topics: start here](#system-design-topics-start-here)
     - [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
     - [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
@@ -391,7 +391,7 @@ Confira os links a seguir para ter uma ideia melhor do que esperar:
 | Projete um armazenamento de chave-valor para um mecanismo de busca | [Solução](solutions/system_design/query_cache/README.md) |
 | Projete o recurso de classificação de vendas da Amazon por categoria | [Solução](solutions/system_design/sales_rank/README.md) |
 | Projete um sistema que seja escalável para milhões de usuários na AWS | [Solução](solutions/system_design/scaling_aws/README.md) |
-| Adicionar uma pergunta de design de sistema | [Contribua](#contributing) |
+| Adicionar uma pergunta de design de sistema | [Contribua](#contribuindo) |
 
 ### Projete Pastebin.com (ou Bit.ly)
 
@@ -441,24 +441,24 @@ Confira os links a seguir para ter uma ideia melhor do que esperar:
 
 ![Imgur](images/jj3A5N8.png)
 
-## Object-oriented design interview questions with solutions
+## Perguntas de entrevista sobre design orientado a objetos com soluções
 
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+> Perguntas comuns de entrevistas sobre design orientado a objetos com exemplos de discussões, código e diagramas.
 >
-> Solutions linked to content in the `solutions/` folder.
+> Soluções vinculadas ao conteúdo na pasta `solutions/`.
 
->**Note: This section is under development**
+>**Nota: Esta seção está em desenvolvimento**
 
-| Question | |
+| Desafio | |
 |---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
+| Projete um mapa hash | [Solução](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Projete um cache menos usado recentemente | [Solução](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Projete um call center | [Solução](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Crie um baralho de cartas | [Solução](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Projete um estacionamento| [Solução](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Projetar um servidor de bate-papo | [Solução](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Projetar uma matriz circular | [Contribua](#contribuindo)  |
+| Adicione uma pergunta de design orientada a objetos | [Contribua](#contribuindo) |
 
 ## System design topics: start here
 
