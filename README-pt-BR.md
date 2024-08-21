@@ -114,15 +114,15 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     - [Passo 4: Escale o design](#passo-4-escale-o-design)
     - [Calculos rápidos (Back-of-the-envelope calculations)](#calculos-rápidos-back-of-the-envelope-calculations)
     - [Fonte(s) e leitura adicional](#fontes-e-leitura-adicional)
-  - [System design interview questions with solutions](#system-design-interview-questions-with-solutions)
-    - [Design Pastebin.com (or Bit.ly)](#design-pastebincom-or-bitly)
-    - [Design the Twitter timeline and search (or Facebook feed and search)](#design-the-twitter-timeline-and-search-or-facebook-feed-and-search)
-    - [Design a web crawler](#design-a-web-crawler)
-    - [Design Mint.com](#design-mintcom)
-    - [Design the data structures for a social network](#design-the-data-structures-for-a-social-network)
-    - [Design a key-value store for a search engine](#design-a-key-value-store-for-a-search-engine)
-    - [Design Amazon's sales ranking by category feature](#design-amazons-sales-ranking-by-category-feature)
-    - [Design a system that scales to millions of users on AWS](#design-a-system-that-scales-to-millions-of-users-on-aws)
+  - [Perguntas da entrevista de design de sistema com soluções](#perguntas-da-entrevista-de-design-de-sistema-com-soluções)
+    - [Projete Pastebin.com (ou Bit.ly)](#projete-pastebincom-ou-bitly)
+    - [Projete a linha do tempo e a pesquisa do Twitter (ou o feed e a pesquisa do Facebook)](#projete-a-linha-do-tempo-e-a-pesquisa-do-twitter-ou-o-feed-e-a-pesquisa-do-facebook)
+    - [Projete um rastreador web](#projete-um-rastreador-web)
+    - [Projete o Mint.com](#projete-o-mintcom)
+    - [Projete as estruturas de dados para uma rede social](#projete-as-estruturas-de-dados-para-uma-rede-social)
+    - [Projete um armazenamento de chave-valor para um mecanismo de busca](#projete-um-armazenamento-de-chave-valor-para-um-mecanismo-de-busca)
+    - [Projete o recurso de classificação de vendas da Amazon por categoria](#projete-o-recurso-de-classificação-de-vendas-da-amazon-por-categoria)
+    - [Projete um sistema que seja escalável para milhões de usuários na AWS](#projete-um-sistema-que-seja-escalável-para-milhões-de-usuários-na-aws)
   - [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions)
   - [System design topics: start here](#system-design-topics-start-here)
     - [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
@@ -375,69 +375,69 @@ Confira os links a seguir para ter uma ideia melhor do que esperar:
 * [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
 * [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
 
-## System design interview questions with solutions
+## Perguntas da entrevista de design de sistema com soluções
 
-> Common system design interview questions with sample discussions, code, and diagrams.
->
-> Solutions linked to content in the `solutions/` folder.
+> Perguntas comuns de entrevistas sobre design de sistemas com exemplos de discussões, código e diagramas.
+> 
+> Soluções vinculadas ao conteúdo na pasta `solutions/`.
 
-| Question | |
+| Desafio | |
 |---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
+| Projete Pastebin.com (ou Bit.ly) | [Solução](solutions/system_design/pastebin/README.md) |
+| Projete a linha do tempo e a pesquisa do Twitter (ou o feed e a pesquisa do Facebook) | [Solução](solutions/system_design/twitter/README.md) |
+| Projete um rastreador web | [Solução](solutions/system_design/web_crawler/README.md) |
+| Projete o Mint.com | [Solução](solutions/system_design/mint/README.md) |
+| Projete as estruturas de dados para uma rede social | [Solução](solutions/system_design/social_graph/README.md) |
+| Projete um armazenamento de chave-valor para um mecanismo de busca | [Solução](solutions/system_design/query_cache/README.md) |
+| Projete o recurso de classificação de vendas da Amazon por categoria | [Solução](solutions/system_design/sales_rank/README.md) |
+| Projete um sistema que seja escalável para milhões de usuários na AWS | [Solução](solutions/system_design/scaling_aws/README.md) |
+| Adicionar uma pergunta de design de sistema | [Contribua](#contributing) |
 
-### Design Pastebin.com (or Bit.ly)
+### Projete Pastebin.com (ou Bit.ly)
 
-[View exercise and solution](solutions/system_design/pastebin/README.md)
+[Veja o exercicio e a solução](solutions/system_design/pastebin/README.md)
 
 ![Imgur](images/4edXG0T.png)
 
-### Design the Twitter timeline and search (or Facebook feed and search)
+### Projete a linha do tempo e a pesquisa do Twitter (ou o feed e a pesquisa do Facebook)
 
-[View exercise and solution](solutions/system_design/twitter/README.md)
+[Veja o exercicio e a solução](solutions/system_design/twitter/README.md)
 
 ![Imgur](images/jrUBAF7.png)
 
-### Design a web crawler
+### Projete um rastreador web
 
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
+[Veja o exercicio e a solução](solutions/system_design/web_crawler/README.md)
 
 ![Imgur](images/bWxPtQA.png)
 
-### Design Mint.com
+### Projete o Mint.com
 
-[View exercise and solution](solutions/system_design/mint/README.md)
+[Veja o exercicio e a solução](solutions/system_design/mint/README.md)
 
 ![Imgur](images/V5q57vU.png)
 
-### Design the data structures for a social network
+### Projete as estruturas de dados para uma rede social
 
-[View exercise and solution](solutions/system_design/social_graph/README.md)
+[Veja o exercicio e a solução](solutions/system_design/social_graph/README.md)
 
 ![Imgur](images/cdCv5g7.png)
 
-### Design a key-value store for a search engine
+### Projete um armazenamento de chave-valor para um mecanismo de busca
 
-[View exercise and solution](solutions/system_design/query_cache/README.md)
+[Veja o exercicio e a solução](solutions/system_design/query_cache/README.md)
 
 ![Imgur](images/4j99mhe.png)
 
-### Design Amazon's sales ranking by category feature
+### Projete o recurso de classificação de vendas da Amazon por categoria
 
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
+[Veja o exercicio e a solução](solutions/system_design/sales_rank/README.md)
 
 ![Imgur](images/MzExP06.png)
 
-### Design a system that scales to millions of users on AWS
+### Projete um sistema que seja escalável para milhões de usuários na AWS
 
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+[Veja o exercicio e a solução](solutions/system_design/scaling_aws/README.md)
 
 ![Imgur](images/jj3A5N8.png)
 
