@@ -124,10 +124,10 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     - [Projete o recurso de classificação de vendas da Amazon por categoria](#projete-o-recurso-de-classificação-de-vendas-da-amazon-por-categoria)
     - [Projete um sistema que seja escalável para milhões de usuários na AWS](#projete-um-sistema-que-seja-escalável-para-milhões-de-usuários-na-aws)
   - [Perguntas de entrevista sobre design orientado a objetos com soluções](#perguntas-de-entrevista-sobre-design-orientado-a-objetos-com-soluções)
-  - [System design topics: start here](#system-design-topics-start-here)
-    - [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
-    - [Step 2: Review the scalability article](#step-2-review-the-scalability-article)
-    - [Next steps](#next-steps)
+  - [Tópicos de design do sistema: Comece aqui](#tópicos-de-design-do-sistema-comece-aqui)
+    - [Passo 1: Revise a videoaula sobre escalabilidade](#passo-1-revise-a-videoaula-sobre-escalabilidade)
+    - [Passo 2: Revise o artigo sobre escalabilidade](#passo-2-revise-o-artigo-sobre-escalabilidade)
+    - [Próximos passos](#próximos-passos)
   - [Performance vs scalability](#performance-vs-scalability)
     - [Source(s) and further reading](#sources-and-further-reading)
   - [Latency vs throughput](#latency-vs-throughput)
@@ -460,45 +460,45 @@ Confira os links a seguir para ter uma ideia melhor do que esperar:
 | Projetar uma matriz circular | [Contribua](#contribuindo)  |
 | Adicione uma pergunta de design orientada a objetos | [Contribua](#contribuindo) |
 
-## System design topics: start here
+## Tópicos de design do sistema: Comece aqui
 
-New to system design?
+Novo em design do sistema?
 
-First, you'll need a basic understanding of common principles, learning about what they are, how they are used, and their pros and cons.
+Primeiro, você precisará de uma compreensão básica dos princípios comuns, aprendendo sobre o que eles são, como são usados ​​e seus prós e contras.
 
-### Step 1: Review the scalability video lecture
+### Passo 1: Revise a videoaula sobre escalabilidade
 
 [Scalability Lecture at Harvard](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
-* Topics covered:
-    * Vertical scaling
-    * Horizontal scaling
+* Tópicos abordados:
+    * Escala vertical
+    * Escala horizontal
     * Caching
-    * Load balancing
-    * Database replication
-    * Database partitioning
+    * Balanceamento de carga
+    * Replicação de banco de dados
+    * Particionamento de banco de dados
 
-### Step 2: Review the scalability article
+### Passo 2: Revise o artigo sobre escalabilidade
 
 [Scalability](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
 
-* Topics covered:
+* Tópicos abordados:
     * [Clones](https://web.archive.org/web/20220530193911/https://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones)
     * [Databases](https://web.archive.org/web/20220602114024/https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database)
     * [Caches](https://web.archive.org/web/20230126233752/https://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache)
     * [Asynchronism](https://web.archive.org/web/20220926171507/https://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
 
-### Next steps
+### Próximos passos
 
-Next, we'll look at high-level trade-offs:
+A seguir, veremos as compensações de alto nível:
 
-* **Performance** vs **scalability**
-* **Latency** vs **throughput**
-* **Availability** vs **consistency**
+* **Desempenho** vs **escalabilidade**
+* **Latência** vs **taxa de transferência**
+* **Disponibilidade** vs **consistência**
 
-Keep in mind that **everything is a trade-off**.
+Tenha em mente que **tudo é uma questão de compensação**.
 
-Then we'll dive into more specific topics such as DNS, CDNs, and load balancers.
+Em seguida, abordaremos tópicos mais específicos, como DNS, CDNs e balanceadores de carga.
 
 ## Performance vs scalability
 
