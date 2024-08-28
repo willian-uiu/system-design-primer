@@ -133,15 +133,16 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
   - [Latência vs taxa de transferência](#latência-vs-taxa-de-transferência)
     - [Fonte(s) e leitura adicional](#fontes-e-leitura-adicional-2)
   - [Disponibilidade vs consistência](#disponibilidade-vs-consistência)
-    - [Teorema CAP (Consistency, Availability, Partition Tolerance)](#teorema-cap-consistency-availability-partition-tolerance)
+    - [Teorema CAP](#teorema-cap)
+    - [(Consistency, Availability, Partition Tolerance)](#consistency-availability-partition-tolerance)
       - [CP - consistência e tolerância de partição](#cp---consistência-e-tolerância-de-partição)
       - [AP - disponibilidade e tolerância de partição](#ap---disponibilidade-e-tolerância-de-partição)
     - [Fonte(s) e leitura adicional](#fontes-e-leitura-adicional-3)
-  - [Consistency patterns](#consistency-patterns)
-    - [Weak consistency](#weak-consistency)
-    - [Eventual consistency](#eventual-consistency)
-    - [Strong consistency](#strong-consistency)
-    - [Source(s) and further reading](#sources-and-further-reading)
+  - [Padrões de consistência](#padrões-de-consistência)
+    - [Consistência fraca](#consistência-fraca)
+    - [Consistência eventual](#consistência-eventual)
+    - [Consistência forte](#consistência-forte)
+    - [Fonte(s) e leitura adicional](#fontes-e-leitura-adicional-4)
   - [Availability patterns](#availability-patterns)
     - [Fail-over](#fail-over)
       - [Active-passive](#active-passive)
@@ -157,28 +158,28 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
           - [In parallel](#in-parallel)
   - [Domain name system](#domain-name-system)
     - [Disadvantage(s): DNS](#disadvantages-dns)
-    - [Source(s) and further reading](#sources-and-further-reading-1)
+    - [Source(s) and further reading](#sources-and-further-reading)
   - [Content delivery network](#content-delivery-network)
     - [Push CDNs](#push-cdns)
     - [Pull CDNs](#pull-cdns)
     - [Disadvantage(s): CDN](#disadvantages-cdn)
-    - [Source(s) and further reading](#sources-and-further-reading-2)
+    - [Source(s) and further reading](#sources-and-further-reading-1)
   - [Load balancer](#load-balancer)
     - [Layer 4 load balancing](#layer-4-load-balancing)
     - [Layer 7 load balancing](#layer-7-load-balancing)
     - [Horizontal scaling](#horizontal-scaling)
       - [Disadvantage(s): horizontal scaling](#disadvantages-horizontal-scaling)
     - [Disadvantage(s): load balancer](#disadvantages-load-balancer)
-    - [Source(s) and further reading](#sources-and-further-reading-3)
+    - [Source(s) and further reading](#sources-and-further-reading-2)
   - [Reverse proxy (web server)](#reverse-proxy-web-server)
     - [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
     - [Disadvantage(s): reverse proxy](#disadvantages-reverse-proxy)
-    - [Source(s) and further reading](#sources-and-further-reading-4)
+    - [Source(s) and further reading](#sources-and-further-reading-3)
   - [Application layer](#application-layer)
     - [Microservices](#microservices)
     - [Service Discovery](#service-discovery)
     - [Disadvantage(s): application layer](#disadvantages-application-layer)
-    - [Source(s) and further reading](#sources-and-further-reading-5)
+    - [Source(s) and further reading](#sources-and-further-reading-4)
   - [Database](#database)
     - [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
       - [Master-slave replication](#master-slave-replication)
@@ -233,13 +234,13 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
       - [Refresh-ahead](#refresh-ahead)
         - [Disadvantage(s): refresh-ahead](#disadvantages-refresh-ahead)
     - [Disadvantage(s): cache](#disadvantages-cache)
-    - [Source(s) and further reading](#sources-and-further-reading-6)
+    - [Source(s) and further reading](#sources-and-further-reading-5)
   - [Asynchronism](#asynchronism)
     - [Message queues](#message-queues)
     - [Task queues](#task-queues)
     - [Back pressure](#back-pressure)
     - [Disadvantage(s): asynchronism](#disadvantages-asynchronism)
-    - [Source(s) and further reading](#sources-and-further-reading-7)
+    - [Source(s) and further reading](#sources-and-further-reading-6)
   - [Communication](#communication)
     - [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
       - [Source(s) and further reading: HTTP](#sources-and-further-reading-http)
@@ -253,18 +254,18 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     - [RPC and REST calls comparison](#rpc-and-rest-calls-comparison)
       - [Source(s) and further reading: REST and RPC](#sources-and-further-reading-rest-and-rpc)
   - [Security](#security)
-    - [Source(s) and further reading](#sources-and-further-reading-8)
+    - [Source(s) and further reading](#sources-and-further-reading-7)
   - [Appendix](#appendix)
     - [Powers of two table](#powers-of-two-table)
-      - [Source(s) and further reading](#sources-and-further-reading-9)
+      - [Source(s) and further reading](#sources-and-further-reading-8)
     - [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
       - [Latency numbers visualized](#latency-numbers-visualized)
-      - [Source(s) and further reading](#sources-and-further-reading-10)
+      - [Source(s) and further reading](#sources-and-further-reading-9)
     - [Additional system design interview questions](#additional-system-design-interview-questions)
     - [Real world architectures](#real-world-architectures)
     - [Company architectures](#company-architectures)
     - [Company engineering blogs](#company-engineering-blogs)
-      - [Source(s) and further reading](#sources-and-further-reading-11)
+      - [Source(s) and further reading](#sources-and-further-reading-10)
   - [Under development](#under-development)
   - [Credits](#credits)
   - [Contact info](#contact-info)
@@ -528,8 +529,8 @@ Geralmente, você deve ter como objetivo **taxa de transferencia máxima** com *
 
 ## Disponibilidade vs consistência
 
-### Teorema CAP (Consistency, Availability, Partition Tolerance)
-
+### Teorema CAP 
+### (Consistency, Availability, Partition Tolerance)
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
@@ -561,29 +562,29 @@ AP é uma boa escolha se o negócio precisa permitir [consistência eventual](#c
 * [CAP FAQ](https://github.com/henryr/cap-faq)
 * [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
 
-## Consistency patterns
+## Padrões de consistência
 
-With multiple copies of the same data, we are faced with options on how to synchronize them so clients have a consistent view of the data.  Recall the definition of consistency from the [CAP theorem](#cap-theorem) - Every read receives the most recent write or an error.
+Com várias cópias dos mesmos dados, nos deparamos com opções sobre como sincronizá-los para que os clientes tenham uma visão consistente dos dados. Lembre-se da definição de consistência do [teorema CAP](#Teorema-CAP) - Cada leitura recebe a gravação mais recente ou um erro.
 
-### Weak consistency
+### Consistência fraca
 
-After a write, reads may or may not see it.  A best effort approach is taken.
+Após uma gravação, os leitores podem ou não vê-la. Uma abordagem de melhor esforço é adotada.
 
-This approach is seen in systems such as memcached.  Weak consistency works well in real time use cases such as VoIP, video chat, and realtime multiplayer games.  For example, if you are on a phone call and lose reception for a few seconds, when you regain connection you do not hear what was spoken during connection loss.
+Essa abordagem é vista em sistemas como o memcached. Consistência fraca funciona bem em casos de uso em tempo real, como VoIP, chat de vídeo e jogos multijogador em tempo real. Por exemplo, se você estiver em uma chamada telefônica e perder a conexão por alguns segundos, quando você recuperar a conexão, não ouvirá o que foi falado durante a perda da conexão.
 
-### Eventual consistency
+### Consistência eventual
 
-After a write, reads will eventually see it (typically within milliseconds).  Data is replicated asynchronously.
+Após uma gravação, as leituras eventualmente a verão (normalmente em milissegundos). Os dados são replicados de forma assíncrona.
 
-This approach is seen in systems such as DNS and email.  Eventual consistency works well in highly available systems.
+Essa abordagem é vista em sistemas como DNS e e-mail. A consistência eventual funciona bem em sistemas altamente disponíveis.
 
-### Strong consistency
+### Consistência forte
 
-After a write, reads will see it.  Data is replicated synchronously.
+Após uma gravação, as leituras a verão. Os dados são replicados de forma síncrona.
 
-This approach is seen in file systems and RDBMSes.  Strong consistency works well in systems that need transactions.
+Essa abordagem é vista em sistemas de arquivos e RDBMSes. A consistência forte funciona bem em sistemas que precisam de transações.
 
-### Source(s) and further reading
+### Fonte(s) e leitura adicional
 
 * [Transactions across data centers](http://snarfed.org/transactions_across_datacenters_io.html)
 
