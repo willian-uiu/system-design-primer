@@ -132,16 +132,16 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     - [Fonte(s) e leitura adicional](#fontes-e-leitura-adicional-1)
   - [Latência vs taxa de transferência](#latência-vs-taxa-de-transferência)
     - [Fonte(s) e leitura adicional](#fontes-e-leitura-adicional-2)
-  - [Availability vs consistency](#availability-vs-consistency)
-    - [CAP theorem](#cap-theorem)
-      - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-      - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-    - [Source(s) and further reading](#sources-and-further-reading)
+  - [Disponibilidade vs consistência](#disponibilidade-vs-consistência)
+    - [Teorema CAP (Consistency, Availability, Partition Tolerance)](#teorema-cap-consistency-availability-partition-tolerance)
+      - [CP - consistência e tolerância de partição](#cp---consistência-e-tolerância-de-partição)
+      - [AP - disponibilidade e tolerância de partição](#ap---disponibilidade-e-tolerância-de-partição)
+    - [Fonte(s) e leitura adicional](#fontes-e-leitura-adicional-3)
   - [Consistency patterns](#consistency-patterns)
     - [Weak consistency](#weak-consistency)
     - [Eventual consistency](#eventual-consistency)
     - [Strong consistency](#strong-consistency)
-    - [Source(s) and further reading](#sources-and-further-reading-1)
+    - [Source(s) and further reading](#sources-and-further-reading)
   - [Availability patterns](#availability-patterns)
     - [Fail-over](#fail-over)
       - [Active-passive](#active-passive)
@@ -157,28 +157,28 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
           - [In parallel](#in-parallel)
   - [Domain name system](#domain-name-system)
     - [Disadvantage(s): DNS](#disadvantages-dns)
-    - [Source(s) and further reading](#sources-and-further-reading-2)
+    - [Source(s) and further reading](#sources-and-further-reading-1)
   - [Content delivery network](#content-delivery-network)
     - [Push CDNs](#push-cdns)
     - [Pull CDNs](#pull-cdns)
     - [Disadvantage(s): CDN](#disadvantages-cdn)
-    - [Source(s) and further reading](#sources-and-further-reading-3)
+    - [Source(s) and further reading](#sources-and-further-reading-2)
   - [Load balancer](#load-balancer)
     - [Layer 4 load balancing](#layer-4-load-balancing)
     - [Layer 7 load balancing](#layer-7-load-balancing)
     - [Horizontal scaling](#horizontal-scaling)
       - [Disadvantage(s): horizontal scaling](#disadvantages-horizontal-scaling)
     - [Disadvantage(s): load balancer](#disadvantages-load-balancer)
-    - [Source(s) and further reading](#sources-and-further-reading-4)
+    - [Source(s) and further reading](#sources-and-further-reading-3)
   - [Reverse proxy (web server)](#reverse-proxy-web-server)
     - [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
     - [Disadvantage(s): reverse proxy](#disadvantages-reverse-proxy)
-    - [Source(s) and further reading](#sources-and-further-reading-5)
+    - [Source(s) and further reading](#sources-and-further-reading-4)
   - [Application layer](#application-layer)
     - [Microservices](#microservices)
     - [Service Discovery](#service-discovery)
     - [Disadvantage(s): application layer](#disadvantages-application-layer)
-    - [Source(s) and further reading](#sources-and-further-reading-6)
+    - [Source(s) and further reading](#sources-and-further-reading-5)
   - [Database](#database)
     - [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
       - [Master-slave replication](#master-slave-replication)
@@ -233,13 +233,13 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
       - [Refresh-ahead](#refresh-ahead)
         - [Disadvantage(s): refresh-ahead](#disadvantages-refresh-ahead)
     - [Disadvantage(s): cache](#disadvantages-cache)
-    - [Source(s) and further reading](#sources-and-further-reading-7)
+    - [Source(s) and further reading](#sources-and-further-reading-6)
   - [Asynchronism](#asynchronism)
     - [Message queues](#message-queues)
     - [Task queues](#task-queues)
     - [Back pressure](#back-pressure)
     - [Disadvantage(s): asynchronism](#disadvantages-asynchronism)
-    - [Source(s) and further reading](#sources-and-further-reading-8)
+    - [Source(s) and further reading](#sources-and-further-reading-7)
   - [Communication](#communication)
     - [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
       - [Source(s) and further reading: HTTP](#sources-and-further-reading-http)
@@ -253,18 +253,18 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     - [RPC and REST calls comparison](#rpc-and-rest-calls-comparison)
       - [Source(s) and further reading: REST and RPC](#sources-and-further-reading-rest-and-rpc)
   - [Security](#security)
-    - [Source(s) and further reading](#sources-and-further-reading-9)
+    - [Source(s) and further reading](#sources-and-further-reading-8)
   - [Appendix](#appendix)
     - [Powers of two table](#powers-of-two-table)
-      - [Source(s) and further reading](#sources-and-further-reading-10)
+      - [Source(s) and further reading](#sources-and-further-reading-9)
     - [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
       - [Latency numbers visualized](#latency-numbers-visualized)
-      - [Source(s) and further reading](#sources-and-further-reading-11)
+      - [Source(s) and further reading](#sources-and-further-reading-10)
     - [Additional system design interview questions](#additional-system-design-interview-questions)
     - [Real world architectures](#real-world-architectures)
     - [Company architectures](#company-architectures)
     - [Company engineering blogs](#company-engineering-blogs)
-      - [Source(s) and further reading](#sources-and-further-reading-12)
+      - [Source(s) and further reading](#sources-and-further-reading-11)
   - [Under development](#under-development)
   - [Credits](#credits)
   - [Contact info](#contact-info)
@@ -526,35 +526,35 @@ Geralmente, você deve ter como objetivo **taxa de transferencia máxima** com *
 
 * [Understanding latency vs throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
 
-## Availability vs consistency
+## Disponibilidade vs consistência
 
-### CAP theorem
+### Teorema CAP (Consistency, Availability, Partition Tolerance)
 
 <p align="center">
   <img src="images/bgLMI2u.png">
   <br/>
-  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
+  <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Fonte: CAP theorem revisited</a></i>
 </p>
 
-In a distributed computer system, you can only support two of the following guarantees:
+Em um sistema de computador distribuído, você só pode oferecer suporte a duas das seguintes garantias:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+* **Consistência** - Cada leitura recebe a gravação mais recente ou um erro
+* **Disponibilidade** - Cada solicitação recebe uma resposta, sem garantia de que contenha a versão mais recente das informações
+* **Tolerância de partição** - O sistema continua a operar apesar do particionamento arbitrário devido a falhas de rede
 
-*Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
+*Redes não são confiáveis, então você precisará dar suporte à tolerância de partição. Você precisará fazer uma troca de software entre consistência e disponibilidade.*
 
-#### CP - consistency and partition tolerance
+#### CP - consistência e tolerância de partição
 
-Waiting for a response from the partitioned node might result in a timeout error.  CP is a good choice if your business needs require atomic reads and writes.
+Esperar por uma resposta do nó particionado pode resultar em um erro de timeout. CP é uma boa escolha se suas necessidades comerciais exigem leituras e gravações atômicas.
 
-#### AP - availability and partition tolerance
+#### AP - disponibilidade e tolerância de partição
 
-Responses return the most readily available version of the data available on any node, which might not be the latest.  Writes might take some time to propagate when the partition is resolved.
+As respostas retornam a versão mais prontamente disponível dos dados disponíveis em qualquer nó, que pode não ser a mais recente. As gravações podem levar algum tempo para se propagar quando a partição é resolvida.
 
-AP is a good choice if the business needs to allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+AP é uma boa escolha se o negócio precisa permitir [consistência eventual](#consistência-eventual) ou quando o sistema precisa continuar funcionando apesar de erros externos.
 
-### Source(s) and further reading
+### Fonte(s) e leitura adicional
 
 * [CAP theorem revisited](http://robertgreiner.com/2014/08/cap-theorem-revisited/)
 * [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
