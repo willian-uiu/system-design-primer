@@ -128,20 +128,20 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     - [Passo 1: Revise a videoaula sobre escalabilidade](#passo-1-revise-a-videoaula-sobre-escalabilidade)
     - [Passo 2: Revise o artigo sobre escalabilidade](#passo-2-revise-o-artigo-sobre-escalabilidade)
     - [Próximos passos](#próximos-passos)
-  - [Performance vs scalability](#performance-vs-scalability)
-    - [Source(s) and further reading](#sources-and-further-reading)
+  - [Desempenho vs escalabilidade](#desempenho-vs-escalabilidade)
+    - [Fonte(s) e leitura adicional](#fontes-e-leitura-adicional-1)
   - [Latency vs throughput](#latency-vs-throughput)
-    - [Source(s) and further reading](#sources-and-further-reading-1)
+    - [Source(s) and further reading](#sources-and-further-reading)
   - [Availability vs consistency](#availability-vs-consistency)
     - [CAP theorem](#cap-theorem)
       - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
       - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-    - [Source(s) and further reading](#sources-and-further-reading-2)
+    - [Source(s) and further reading](#sources-and-further-reading-1)
   - [Consistency patterns](#consistency-patterns)
     - [Weak consistency](#weak-consistency)
     - [Eventual consistency](#eventual-consistency)
     - [Strong consistency](#strong-consistency)
-    - [Source(s) and further reading](#sources-and-further-reading-3)
+    - [Source(s) and further reading](#sources-and-further-reading-2)
   - [Availability patterns](#availability-patterns)
     - [Fail-over](#fail-over)
       - [Active-passive](#active-passive)
@@ -157,28 +157,28 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
           - [In parallel](#in-parallel)
   - [Domain name system](#domain-name-system)
     - [Disadvantage(s): DNS](#disadvantages-dns)
-    - [Source(s) and further reading](#sources-and-further-reading-4)
+    - [Source(s) and further reading](#sources-and-further-reading-3)
   - [Content delivery network](#content-delivery-network)
     - [Push CDNs](#push-cdns)
     - [Pull CDNs](#pull-cdns)
     - [Disadvantage(s): CDN](#disadvantages-cdn)
-    - [Source(s) and further reading](#sources-and-further-reading-5)
+    - [Source(s) and further reading](#sources-and-further-reading-4)
   - [Load balancer](#load-balancer)
     - [Layer 4 load balancing](#layer-4-load-balancing)
     - [Layer 7 load balancing](#layer-7-load-balancing)
     - [Horizontal scaling](#horizontal-scaling)
       - [Disadvantage(s): horizontal scaling](#disadvantages-horizontal-scaling)
     - [Disadvantage(s): load balancer](#disadvantages-load-balancer)
-    - [Source(s) and further reading](#sources-and-further-reading-6)
+    - [Source(s) and further reading](#sources-and-further-reading-5)
   - [Reverse proxy (web server)](#reverse-proxy-web-server)
     - [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
     - [Disadvantage(s): reverse proxy](#disadvantages-reverse-proxy)
-    - [Source(s) and further reading](#sources-and-further-reading-7)
+    - [Source(s) and further reading](#sources-and-further-reading-6)
   - [Application layer](#application-layer)
     - [Microservices](#microservices)
     - [Service Discovery](#service-discovery)
     - [Disadvantage(s): application layer](#disadvantages-application-layer)
-    - [Source(s) and further reading](#sources-and-further-reading-8)
+    - [Source(s) and further reading](#sources-and-further-reading-7)
   - [Database](#database)
     - [Relational database management system (RDBMS)](#relational-database-management-system-rdbms)
       - [Master-slave replication](#master-slave-replication)
@@ -233,13 +233,13 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
       - [Refresh-ahead](#refresh-ahead)
         - [Disadvantage(s): refresh-ahead](#disadvantages-refresh-ahead)
     - [Disadvantage(s): cache](#disadvantages-cache)
-    - [Source(s) and further reading](#sources-and-further-reading-9)
+    - [Source(s) and further reading](#sources-and-further-reading-8)
   - [Asynchronism](#asynchronism)
     - [Message queues](#message-queues)
     - [Task queues](#task-queues)
     - [Back pressure](#back-pressure)
     - [Disadvantage(s): asynchronism](#disadvantages-asynchronism)
-    - [Source(s) and further reading](#sources-and-further-reading-10)
+    - [Source(s) and further reading](#sources-and-further-reading-9)
   - [Communication](#communication)
     - [Hypertext transfer protocol (HTTP)](#hypertext-transfer-protocol-http)
       - [Source(s) and further reading: HTTP](#sources-and-further-reading-http)
@@ -253,18 +253,18 @@ Revise as [Diretrizes de contribuição](CONTRIBUTING.md).
     - [RPC and REST calls comparison](#rpc-and-rest-calls-comparison)
       - [Source(s) and further reading: REST and RPC](#sources-and-further-reading-rest-and-rpc)
   - [Security](#security)
-    - [Source(s) and further reading](#sources-and-further-reading-11)
+    - [Source(s) and further reading](#sources-and-further-reading-10)
   - [Appendix](#appendix)
     - [Powers of two table](#powers-of-two-table)
-      - [Source(s) and further reading](#sources-and-further-reading-12)
+      - [Source(s) and further reading](#sources-and-further-reading-11)
     - [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
       - [Latency numbers visualized](#latency-numbers-visualized)
-      - [Source(s) and further reading](#sources-and-further-reading-13)
+      - [Source(s) and further reading](#sources-and-further-reading-12)
     - [Additional system design interview questions](#additional-system-design-interview-questions)
     - [Real world architectures](#real-world-architectures)
     - [Company architectures](#company-architectures)
     - [Company engineering blogs](#company-engineering-blogs)
-      - [Source(s) and further reading](#sources-and-further-reading-14)
+      - [Source(s) and further reading](#sources-and-further-reading-13)
   - [Under development](#under-development)
   - [Credits](#credits)
   - [Contact info](#contact-info)
@@ -500,16 +500,16 @@ Tenha em mente que **tudo é uma questão de compensação**.
 
 Em seguida, abordaremos tópicos mais específicos, como DNS, CDNs e balanceadores de carga.
 
-## Performance vs scalability
+## Desempenho vs escalabilidade
 
-A service is **scalable** if it results in increased **performance** in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger units of work, such as when datasets grow.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
+Um serviço é **escalável** se resultar em aumento de **desempenho** de forma proporcional aos recursos adicionados. Geralmente, aumentar o desempenho significa servir mais unidades de trabalho, mas também pode ser para lidar com unidades maiores de trabalho, como quando os conjuntos de dados crescem.<sup><a href=http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html>1</a></sup>
 
-Another way to look at performance vs scalability:
+Outra maneira de analisar desempenho vs escalabilidade:
 
-* If you have a **performance** problem, your system is slow for a single user.
-* If you have a **scalability** problem, your system is fast for a single user but slow under heavy load.
+* Se você tiver um problema de **desempenho**, seu sistema estará lento para um único usuário.
+* Se você tiver um problema de **escalabilidade**, seu sistema é rápido para um único usuário, mas lento sob carga pesada.
 
-### Source(s) and further reading
+### Fonte(s) e leitura adicional
 
 * [A word on scalability](http://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
 * [Scalability, availability, stability, patterns](http://www.slideshare.net/jboner/scalability-availability-stability-patterns/)
